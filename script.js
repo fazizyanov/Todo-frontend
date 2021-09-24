@@ -49,7 +49,7 @@ const render = () => {
 
         const imageEdit = document.createElement('img');// Edit
         imageEdit.id = 'imageEdit';
-        imageEdit.src = 'edit-list.svg';
+        imageEdit.src = './img/edit-list.svg';
         container.appendChild(imageEdit);
 
         const inputEdit = document.createElement('input'); // новый инпут для исправления
@@ -72,7 +72,7 @@ const render = () => {
         }
         
         const imageDel = document.createElement('img'); // Delete
-        imageDel.src = 'cancel.svg';
+        imageDel.src = './img/cancel.svg';
         imageDel.id = 'imageDelete';
         container.appendChild(imageDel);
         imageDel.onclick = () => clickDel(index);
@@ -85,7 +85,7 @@ const render = () => {
         }
 
         const imageDone = document.createElement('img'); // Done
-        imageDone.src = 'check-mark.svg';
+        imageDone.src = './img/check-mark.svg';
         imageDone.id = 'imageDone';
         imageDone.classList.add('hide');
         container.appendChild(imageDone);
