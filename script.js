@@ -27,7 +27,7 @@ const updateValue = (e) => {
 const render = () => {
     const content = document.getElementById('content-page');
     while(content.firstChild) {
-        content.removeChild(content.firstChild);
+         content.removeChild(content.firstChild);
     }
     allTasks.map((item, index) => {
         const container = document.createElement('div'); // создаю блок
@@ -49,7 +49,7 @@ const render = () => {
 
         const imageEdit = document.createElement('img');// Edit
         imageEdit.id = 'imageEdit';
-        imageEdit.src = './img/edit-list.svg';
+        imageEdit.src = 'edit-list.svg';
         container.appendChild(imageEdit);
 
         const inputEdit = document.createElement('input'); // новый инпут для исправления
@@ -72,7 +72,7 @@ const render = () => {
         }
         
         const imageDel = document.createElement('img'); // Delete
-        imageDel.src = './img/cancel.svg';
+        imageDel.src = 'cancel.svg';
         imageDel.id = 'imageDelete';
         container.appendChild(imageDel);
         imageDel.onclick = () => clickDel(index);
@@ -85,7 +85,7 @@ const render = () => {
         }
 
         const imageDone = document.createElement('img'); // Done
-        imageDone.src = './img/check-mark.svg';
+        imageDone.src = 'check-mark.svg';
         imageDone.id = 'imageDone';
         imageDone.classList.add('hide');
         container.appendChild(imageDone);
@@ -109,16 +109,15 @@ const render = () => {
         const head = document.getElementById('head');
         head.appendChild(btnRemove);
 
-        btnRemove.onclick = () => onClickRemove(content, container);        
+        btnRemove.onclick = () => onClickRemove();        
     });
 };
 
-const onClickRemove = (valueContent) => {
+const onClickRemove = () => {
     console.log('удалил всё')
-    let body = document.getElementById('body');
-    body.removeChild(valueContent)
-    localStorage.removeItem('tasks'); 
-    render()           
+    allTasks = [];
+    localStorage.removeItem('tasks');
+    render();
 }
 
 const onChangeCheckbox = (index) => {  // Функция состояния checkbox
